@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;    
+            justify-content: space-between; 
+            gap: 10px;
+        }
+
+        
+        .img-left {
+            width: 33%;
+            height: 300px;          
+            border-radius: 18px;    
+            object-fit: cover;      
+        }
+
+        
+        .img-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;     
+            border: 2px solid #555; 
+            object-fit: cover;      
+        }
+
+        
+        .img-right {
+            width: 33%;
+            height: 300px;            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <img src="https://picsum.photos/id/237/600/400" class="img-left" alt="Eiffel Tower">
+
+    <img src="https://picsum.photos/id/237/600/400" class="img-center" alt="Scenery">
+
+    <img src="https://picsum.photos/id/237/600/400" class="img-right" alt="Eiffel Tower">
+</div>
+</body>
+</html>
