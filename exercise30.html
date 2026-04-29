@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>exercise30</title>
+</head>
+<body>
+
+    <h1 id="myText">Hello</h1>
+
+    <button type="button" 
+        onmouseover="changeColor()" 
+        onclick="changeText()">
+        Button
+    </button>
+
+    <script>
+        
+        function changeColor() {
+            
+            document.getElementById("myText").style.color = "magenta";
+        }
+
+        
+        function changeText() {
+            
+            document.getElementById("myText").innerHTML = "Mouse Click";
+            
+            document.getElementById("myText").style.color = "magenta";
+        }
+    </script>
+
+</body>
+</html>
