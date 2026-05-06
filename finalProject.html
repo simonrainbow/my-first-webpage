@@ -2,6 +2,8 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol: PROTECT THE PLANT | SDG 13</title>
     <style>
         :root {
             --bg-color: #f4f4f4; /* 終末地標誌性的工業淺灰白 */
@@ -19,6 +21,7 @@
             grid-template-columns: 80px 1fr 300px; /* 三欄式佈局 */
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
 
         /* 裝飾性網格背景 */
@@ -42,111 +45,181 @@
             letter-spacing: 1px;
             writing-mode: vertical-rl;
             color: #888;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
         }
 
         /* 中央主要區域 */
         .main-content {
-            padding: 40px;
+            padding: 60px 40px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
         }
 
         .project-tag {
             background: var(--text-main);
             color: #fff;
             display: inline-block;
-            padding: 2px 10px;
+            padding: 4px 12px;
             font-size: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         h1 {
-            font-size: 80px;
+            font-size: 85px;
             margin: 0;
-            line-height: 0.9;
+            line-height: 0.85;
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .description {
+            max-width: 450px; 
+            color: #666; 
+            margin-top: 30px; 
+            line-height: 1.8;
+            font-size: 14px;
+            border-left: 2px solid var(--line-color);
+            padding-left: 20px;
         }
 
         /* 右側面板 */
         .panel {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
             border-left: 1px solid var(--line-color);
-            padding: 20px;
+            padding: 30px 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
+            backdrop-filter: blur(10px);
         }
 
         .data-card {
             border: 1px solid var(--line-color);
-            padding: 15px;
+            padding: 20px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .data-card:hover {
+            border-color: var(--text-main);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .data-card .label {
             font-size: 11px;
             color: #999;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 12px;
             padding-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .data-value {
+            font-size: 28px; 
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .btn-action {
             background: var(--text-main);
             color: #fff;
             border: none;
-            padding: 15px;
+            padding: 20px;
             text-align: left;
             cursor: pointer;
             position: relative;
-            transition: 0.3s;
+            transition: all 0.2s;
+            font-weight: bold;
+            letter-spacing: 1px;
+            overflow: hidden;
         }
 
         .btn-action:hover {
             background: var(--accent-yellow);
             color: #000;
+            padding-left: 25px;
         }
 
-        /* 終末地風格的角落裝飾 */
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #555;
+            border: none;
+            padding: 15px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        /* 角落裝飾 */
         .corner-deco {
+            font-size: 11px;
+            color: #aaa;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+
+        /* 簡單的掃描線特效 */
+        .scanline {
+            width: 100%;
+            height: 1px;
+            background: rgba(0,0,0,0.05);
             position: absolute;
-            bottom: 40px;
-            left: 40px;
-            font-size: 12px;
-            color: #ccc;
+            top: 0;
+            left: 0;
+            animation: moveScan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes moveScan {
+            0% { top: 0%; }
+            100% { top: 100%; }
         }
     </style>
 </head>
 <body>
 
+    <div class="scanline"></div>
+
     <aside class="sidebar">
-        STATION_DATA_TRANSMISSION // AUTO_MODE_ENABLED // SECURE_LINE
+        STATION_DATA_TRANSMISSION // AUTO_MODE_ENABLED // SECURE_LINE_V1.04
     </aside>
 
     <main class="main-content">
         <div>
             <div class="project-tag">SDG 13 // CLIMATE ACTION</div>
             <h1>PROTECT<br>THE PLANT</h1>
-            <p style="max-width: 400px; color: #666; margin-top: 20px; line-height: 1.6;">
-                大氣循環修復協議已啟動。監控範圍：全域。當前目標：實現低碳能源轉型與工業廢物回收。
-            </p>
+            <div class="description">
+                大氣循環修復協議已啟動。監控範圍：全球 (Sector-01)。<br>
+                當前優先任務：實現能源轉型、優化碳捕捉效率及工業廢料自動化回收。
+            </div>
         </div>
         
         <div class="corner-deco">
-            [ COORDINATES: 35.6895° N, 139.6917° E ] <br>
-            VERSION: 1.0.4_STABLE
+            [ COORDINATES: 24.9680° N, 121.1960° E ] <br>
+            STATUS: MONITORING... <br>
+            VERSION: 1.0.4_STABLE_BUILD
         </div>
     </main>
 
     <section class="panel">
         <div class="data-card">
             <div class="label">ATMOSPHERIC STABILITY</div>
-            <div style="font-size: 24px; font-weight: bold;">88.42%</div>
+            <div class="data-value" id="stability-val">88.42%</div>
         </div>
+
         <div class="data-card">
             <div class="label">CARBON_CAPTURE_RATE</div>
-            <div style="font-size: 24px; font-weight: bold; color: var(--accent-yellow);">ACTIVE</div>
+            <div class="data-value" style="color: var(--accent-yellow);">ACTIVE</div>
+        </div>
+
+        <div class="data-card" style="background: #1a1a1a; color: #fff; border: none;">
+            <div class="label" style="color: #666; border-color: #333;">SYSTEM_LOAD</div>
+            <div class="data-value" style="font-size: 18px;">OPTIMAL</div>
         </div>
         
         <div style="flex-grow: 1;"></div>
@@ -155,11 +228,50 @@
             INITIATE RECOVERY <br>
             <span style="font-size: 10px; opacity: 0.7;">啟動修復程序</span>
         </button>
-        <button class="btn-action" style="background: #eee; color: #000;">
+
+        <button class="btn-secondary">
             SYSTEM LOGS <br>
-            <span style="font-size: 10px; opacity: 0.7;">系統紀錄檔案</span>
+            <span style="font-size: 10px; opacity: 0.7;">查看系統紀錄檔案</span>
         </button>
     </section>
 
+    <script>
+        // 1. 模擬監控數據的微幅跳動
+        function updateMonitor() {
+            const stabilityBase = 88.42;
+            // 產生 -0.2 到 +0.2 之間的隨機波動
+            const randomFlounce = (Math.random() * 0.4 - 0.2).toFixed(2);
+            const currentStability = (stabilityBase + parseFloat(randomFlounce)).toFixed(2);
+            
+            const stabilityElement = document.getElementById('stability-val');
+            if(stabilityElement) {
+                stabilityElement.innerText = currentStability + "%";
+            }
+        }
+
+        // 每 2.5 秒跳動一次，讓視覺更自然
+        setInterval(updateMonitor, 2500);
+
+        // 2. 按鈕點擊互動功能
+        const actionBtn = document.querySelector('.btn-action');
+        actionBtn.onclick = () => {
+            const originalHTML = actionBtn.innerHTML;
+            
+            // 改變狀態
+            actionBtn.innerText = "EXECUTING...";
+            actionBtn.style.background = "#ffcf00";
+            actionBtn.style.color = "#000";
+            
+            // 2秒後恢復
+            setTimeout(() => {
+                actionBtn.innerHTML = originalHTML;
+                actionBtn.style.background = ""; // 恢復 CSS 定義的顏色
+                actionBtn.style.color = "";
+            }, 2000);
+        };
+
+        // 控制台小彩蛋，證明系統運行中
+        console.log("Protocol 13: System initialized. Monitoring global climate targets...");
+    </script>
 </body>
 </html>
