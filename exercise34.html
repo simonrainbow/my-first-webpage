@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise 34</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .result-box { background: #f4f4f4; padding: 15px; border-radius: 5px; border: 1px solid #ccc; }
+        h3 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>物件操作結果</h2>
+
+    <h3>1. 原始屬性列表：</h3>
+    <div id="originalProperties" class="result-box"></div>
+
+    <h3>2. 刪除 age 屬性後的物件內容：</h3>
+    <div id="finalObject" class="result-box"></div>
+
+    <script>
+        
+        var Person = {
+            firstName : "Tony",
+            lastName : "Lee",
+            age : 50,
+            eyeColor : "Blue"
+        };
+
+        
+        var properties = Object.keys(Person);
+        document.getElementById('originalProperties').innerText = properties.join(', ');
+
+        delete Person.age;
+
+        document.getElementById('finalObject').innerText = JSON.stringify(Person, null, 4);
+
+        
+        console.log("所有屬性:", properties);
+        console.log("刪除 age 後的物件:", Person);
+    </script>
+</body>
+</html>
