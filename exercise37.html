@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>exercise37</title>
+</head>
+<body>
+
+    <h2>計算圓形的周長與面積</h2>
+    
+    半徑：<input type="number" id="myRadius" value="5">
+    <button onclick="startCalculate()">開始計算</button>
+
+    <p id="output1"></p>
+    <p id="output2"></p>
+
+    <script>
+      
+        function calcCircumfrence(radius) {
+         
+            var pi = 3.14159;
+            var circumference = 2 * pi * radius;
+            
+            var text = "The circumference is " + circumference;
+            
+            
+            document.getElementById("output1").innerHTML = text;
+            
+           
+            console.log(text);
+        }
+
+        
+        function calcArea(radius) {
+            
+            var pi = 3.14159;
+            var area = pi * radius * radius;
+            
+            var text = "The area is " + area;
+            
+          
+            document.getElementById("output2").innerHTML = text;
+            
+            console.log(text);
+        }
+
+      
+        function startCalculate() {
+        
+            var r = document.getElementById("myRadius").value;
+            
+           
+            calcCircumfrence(r);
+            calcArea(r);
+        }
+    </script>
+
+</body>
+</html>
